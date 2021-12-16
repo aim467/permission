@@ -1,6 +1,7 @@
 package cn.tycoding.system.entity;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Transient;
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.List;
  * @author tycoding
  * @date 2019-02-02
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class UserWithRole extends User {
 
