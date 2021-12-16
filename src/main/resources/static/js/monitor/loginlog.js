@@ -20,7 +20,7 @@ let app = new Vue({
         mobileStatus: false, //是否是移动端
         sidebarStatus: true, //侧边栏状态，true：打开，false：关闭
         sidebarFlag: ' openSidebar ', //侧边栏标志
-        dialogVisible: false,
+        passDialogVisible: false,
         newpass: {
             password: ''
         }

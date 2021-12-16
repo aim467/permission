@@ -6,7 +6,7 @@ let app = new Vue({
                 return callback(new Error('名称不能为空'))
             }
             this.$http.get(api.system.user.checkName(value, this.form.id)).then(response => {
-                if (response.body.code != 200) {
+                if (response.body.code !== 200) {
                     callback(new Error(response.body.msg))
                 } else {
                     callback();
@@ -27,6 +27,8 @@ let app = new Vue({
                 totalPage: 12, //总记录数
                 pageOption: [6, 10, 20], //分页选项
             },
+            // 修改密码模态框标识
+            passDialogVisible: false,
             //模态框状态标识
             dialogVisible: false,
             dialogTitle: '',
@@ -54,7 +56,7 @@ let app = new Vue({
             },
             selectIds: [], //Table选中行ID
             checkForm: {
-                username: [{ validator: validateName, trigger: 'blur' }]
+                username: [{validator: validateName, trigger: 'blur'}]
             },
             loading: true,
             mobileStatus: false, //是否是移动端
@@ -92,7 +94,7 @@ let app = new Vue({
         init() {
             //获取Tree
             this.$http.get(api.common.tree(this.info.username)).then(response => {
-                if (response.body.code == 200) {
+                if (response.body.code === 200) {
                     this.tree = response.body.data;
                 }
             })
@@ -173,7 +175,7 @@ let app = new Vue({
             this.dialogVisible = true; //打开模态框
         },
         clearForm() {
-            if (this.$refs.form != undefined) {
+            if (this.$refs.form !== undefined) {
                 this.$refs.form.resetFields(); //重置表单校验状态
             }
             this.form.username = ''

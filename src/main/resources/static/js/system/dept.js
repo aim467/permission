@@ -27,6 +27,8 @@ let app = new Vue({
                 totalPage: 12, //总记录数
                 pageOption: [6, 10, 20], //分页选项
             },
+            // 修改密码模态框标识
+            passDialogVisible: false,
             //模态框状态标识
             dialogVisible: false,
             dialogTitle: '',

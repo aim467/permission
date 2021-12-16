@@ -16,7 +16,7 @@ let app = new Vue({
             pageOption: [10, 10, 20], //分页选项
         },
         selectIds: [], //Table选中行ID
-        dialogVisible: false,
+        passDialogVisible: false,
         newpass: {
             password: ''
         },
